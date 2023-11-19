@@ -15,30 +15,27 @@
 ;   The README contains a lot of information
 ;
 ;==========================================================
+;this is the everforest colorscheme
 
 ;load the modules
 
 include-file = ~/.config/polybar/modules/modules
-include-file = ~/.config/polybar/modules/childrenmodules
 
 ;load the colorschemes
 
-include-file = ~/.config/polybar/colorschemes/default-color
+;include-file = ~/.config/polybar/colorschemes/everforest
 ;include-file = ~/.config/polybar/colorschemes/catppuccin
 ;include-file = ~/.config/polybar/colorschemes/gruvbox
+include-file = ~/.config/polybar/colorschemes/default-color
 ;include-file = ~/.config/polybar/colorschemes/
-;include-file = ~/.config/polybar/colorschemes/
 
-;load the child bars
 
-include-file = ~/.config/polybar/configCHILDREN
-
-[bar/mybar] 
-monitor = HDMI-A-0
-width = 99%
+[bar/mybarDP-left] 
+monitor = DisplayPort-0
+width = 14.5%
 offset-x = 0.5%
 offset-y = 5
-height = 24pt
+height = 26pt
 radius = 10
 ; dpi = 96
 
@@ -68,7 +65,7 @@ font-1 = monospace;2
 ;font-2 = "fontawesome-free-6.4.2-dekstop"
 
 modules-left = spacer xworkspacesROUND 
-modules-right = spacer kden-live alacritty files firefox mocp divider pulseaudio divider date
+modules-right = 
 modules-center = 
 
 cursor-click = pointer
@@ -84,12 +81,12 @@ enable-ipc = true
 
 ;override-redirect = true
 
-[bar/mybar2] 
+[bar/mybarDP-right]
 monitor = DisplayPort-0
-width = 99%.
-offset-x = 0.5%
+width = 15%
+offset-x = 84.5%
 offset-y = 5
-height = 24pt
+height = 26pt
 radius = 10
 ; dpi = 96
 
@@ -118,9 +115,111 @@ font-0 = SymbolsNerdFont-Regular;2
 font-1 = monospace;2
 ;font-2 = "fontawesome-free-6.4.2-dekstop"
 
-modules-left = spacer xworkspacesROUND 
-modules-right = spacer kden-live alacritty files firefox mocp divider pulseaudio divider date
-modules-center = 
+modules-left =
+modules-right = alacritty files firefox mocp pulseaudio date
+modules-center =
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+enable-ipc = true
+
+; tray-position = right
+
+; wm-restack = generic
+; wm-restack = bspwm
+; wm-restack = i3
+
+;override-redirect = true
+
+[bar/mybarDP-left2]
+monitor = DisplayPort-0
+width =18%
+offset-x = 15.5%
+offset-y = 5
+height = 26pt
+radius = 10
+; dpi = 96
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3pt
+
+border-size = 0pt
+border-color = #e49e79
+
+bottom = false
+
+padding-left = 0
+padding-right = 1
+padding-top = 2
+padding-bottom = 3
+
+module-margin = 1
+
+;separator = |
+;separator = /
+separator-foreground = ${colors.primary}
+
+font-0 = SymbolsNerdFont-Regular;2
+font-1 = monospace;2
+;font-2 = "fontawesome-free-6.4.2-dekstop"
+
+modules-left =  
+modules-right = 
+modules-center =  mocpplaying 
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+enable-ipc = true
+
+; tray-position = right
+
+; wm-restack = generic
+; wm-restack = bspwm
+; wm-restack = i3
+
+;override-redirect = true
+
+[bar/mybarDP-center]
+monitor = DisplayPort-0
+width =18%
+offset-x = 34%
+offset-y = 5
+height = 26pt
+radius = 10
+; dpi = 96
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3pt
+
+border-size = 0pt
+border-color = #e49e79
+
+bottom = false
+
+padding-left = 0
+padding-right = 1
+padding-top = 2
+padding-bottom = 3
+
+module-margin = 1
+
+;separator = |
+;separator = /
+separator-foreground = ${colors.primary}
+
+font-0 = SymbolsNerdFont-Regular;2
+font-1 = monospace;2
+;font-2 = "fontawesome-free-6.4.2-dekstop"
+
+modules-left =  
+modules-right = 
+modules-center =   
 
 cursor-click = pointer
 cursor-scroll = ns-resize
