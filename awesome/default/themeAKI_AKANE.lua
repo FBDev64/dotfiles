@@ -13,22 +13,24 @@ local theme = {}
 
 theme.font          = "Source Code Pro 8"
 
-theme.bg_normal     = "#1e2030"
-theme.bg_focus      = "#24273a"
+theme.bg_normal     = "#03252e"
+theme.bg_focus      = "#03252e"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
 
-theme.fg_normal     = "#e49e79"
-theme.fg_focus      = "#e49e79"
-theme.fg_urgent     = "#e49e79"
-theme.fg_minimize   = "#e49e79"
+theme.fg_normal     = "#e65357"
+theme.fg_focus      = "#8bcab2"
+theme.fg_urgent     = "#fbf1c7"
+theme.fg_minimize   = "#fbf1c7"
 
-theme.useless_gap   = dpi(5)
-theme.border_width  = dpi(2)
-theme.border_normal = "#e49e79"
-theme.border_focus  = "#ed8796"
-theme.border_marked = "#a5d995"
+theme.useless_gap   = dpi(5) --was 7 before
+theme.border_width  = dpi(2) --was 3 before
+--theme.border_normal = "#1e2030"
+theme.border_normal = "#8bcab2"
+theme.border_focus  = "#e65357"
+theme.border_marked = "#e65357"
+
 
 -- There are other variable sets
 -- overriding the default one when

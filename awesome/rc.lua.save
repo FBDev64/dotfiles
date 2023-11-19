@@ -74,18 +74,17 @@ awful.layout.layouts = {
     --awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
     --awful.layout.suit.floating,
-    --awful.layout.suit.fair,
-    --awful.layout.suit.floating,
+    awful.layout.suit.fair,
+    awful.layout.suit.floating,
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
     --awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
     --awful.layout.suit.magnifier,
-    awful.layout.suit.corner.nw,
+    --awful.layout.suit.corner.nw,
     --awful.layout.suit.corner.ne,
     -- awful.layout.suit.corner.sw,
-    awful.layout.suit.floating,
     -- awful.layout.suit.corner.se,
 }
 
@@ -201,11 +200,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    --awful.tag({ "4", "5", "6", }, screen[1], awful.layout.layouts[1])
-    --awful.tag({ "1", "2", "3", }, screen[2], awful.layout.suit.tile.bottom)
     awful.tag({ "1", "2", "3", "4", "5", "6", }, s, awful.layout.layouts[1])
- 
-
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -371,10 +366,6 @@ globalkeys = gears.table.join(
     awful.util.spawn("rofi -show drun") end,
               {description = "run rofi", group = "launcher"}),
 
-awful.key({ modkey, "Shift" },            "s",     function ()
-    awful.util.spawn("ksnip -s") end,
-              {description = "take a screenshot", group = "tools"}),
-
     -- Prompt
     awful.key({ modkey },            "b",     function ()
     awful.util.spawn("firefox") end,
@@ -407,21 +398,12 @@ awful.key({ modkey, "Shift" },            "s",     function ()
               {description = "nautilus", group = "applications"}),
 
     awful.key({ modkey },            "v",     function ()
-    awful.util.spawn("alacritty -e ranger") end,
+    awful.util.spawn("rofi -show filebrowser") end,
               {description = "rofi files", group = "launcher"}),
 
     awful.key({ modkey },            "ö",     function ()
     awful.util.spawn("mocp") end,
               {description = "mocp", group = "applications"}),
-
-    awful.key({ modkey },            "+",     function ()
-    awful.util.spawn("./.config/polybar/launch.sh") end,
-              {description = "reload polybar", group = "applications"}),
-
-    awful.key({ modkey, "Shift" },            "+",     function ()
-    awful.util.spawn("pkill polybar") end,
-              {description = "kill polybar", group = "applications"}),
-
 
 --    awful.key({ modkey },            "t",     function ()
 --    awful.util.spawn("rofi -run-shell-command 'alacritty --hold {cmd}'") end,
@@ -741,10 +723,9 @@ end)
 --  properties = { border_width = 0 } }
 
 
-
 --Autostart Applications
 --awful.spawn.with_shell("compton")
-awful.spawn.with_shell("~/.config/arandr/default-layoutLANDSCAPE.sh")
+awful.spawn.with_shell("~/.config/arandr/default-layoutVERTICAL.sh")
 awful.spawn.with_shell("~/.config/polybar/launch.sh")
 --awful.spawn.with_shell("feh -z --bg-fill /home/axon/VagabondWallpaper")
 --awful.spawn.with_shell("~/.config/awesome/nitrogenRestore.sh")
@@ -757,4 +738,3 @@ awful.spawn.with_shell("xrandr --output Displayport-0 --mode 1920x1080 --rate 14
 --awful.spawn.with_shell("picom --animations --animation-for-open-window fly-in -b --experimental-backends --config ~/.config/picom/picom.conf")
 awful.spawn.with_shell("nitrogen --restore")
 --awful.spawn.with_shell(".~/.config/eww/launch/launcheww.sh")
-awful.spawn.with_shell("~/.config/polybar/launchMultiple.sh")
