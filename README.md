@@ -11,4 +11,4 @@
 > - OS - EndeavourOS
 > - Terminal - alacritty
 > - theme - catppuccin macciato / everforest
-> - other fancy stuff - pipes.sh | cava
+> - other fancy stuff - [pipes.sh](https://github.com/pipeseroni/pipes.sh) | [cava](https://github.com/karlstav/cava)
